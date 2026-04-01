@@ -35,7 +35,7 @@
 
 > - [同事.skill](https://github.com/titanwings/colleague-skill) —— 同事跑了用这个
 > - [前任.skill](https://github.com/therealXiaomanChu/ex-skill) —— 前任跑了用这个
-> - **老板.skill** —— 老板裁了你用这个（或者你想裁了老板用这个）
+> - **老板.skill** —— 被老板恶心了用这个
 >
 > 赛博永生一条龙，从感情到职场，谁都跑不了 🌟
 
@@ -660,7 +660,7 @@ create-boss/
 - [前任.skill](https://github.com/therealXiaomanChu/ex-skill) by [@therealXiaomanChu](https://github.com/therealXiaomanChu) —— 把"蒸馏"从职场延伸到情感，5 层人格结构的设计令人印象深刻
 - [PUA.skill](https://github.com/tanweai/pua) by [@tanweai](https://github.com/tanweai) —— PUA 检测的先行者，为职场心理健康发声
 
-同事跑了用 **同事.skill**，前任跑了用 **前任.skill**，老板裁了你用 **老板.skill**。
+同事跑了用 **同事.skill**，前任跑了用 **前任.skill**，被老板恶心了用 **老板.skill**。
 
 赛博永生一条龙，谁都跑不了。
 

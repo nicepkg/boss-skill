@@ -34,7 +34,7 @@ Fun on the outside, **seriously protecting workers** on the inside
 
 > - [Colleague.skill](https://github.com/titanwings/colleague-skill) — colleague left? use this
 > - [Ex.skill](https://github.com/therealXiaomanChu/ex-skill) — ex left? use this
-> - **Boss.skill** — boss fired you? use this (or fire him with this)
+> - **Boss.skill** — sick of your boss? use this
 >
 > Cyber immortality, end to end — no one escapes 🌟
 
