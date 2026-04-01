@@ -68,6 +68,11 @@ python3 <this-skill-dir>/tools/create_boss.py --from-example {对应名字} --sk
 | 解析邮件 .eml/.mbox | `Bash` → `python3 <this-skill-dir>/tools/email_parser.py --file <path> --target "<name>" --output <out>` |
 | 扫描照片 EXIF | `Bash` → `python3 <this-skill-dir>/tools/photo_analyzer.py --dir <dir> --output <out>` |
 | 扫描社交媒体截图 | `Bash` → `python3 <this-skill-dir>/tools/social_parser.py --dir <dir> --output <out>` |
+| 飞书全自动采集 | `Bash` → `python3 <this-skill-dir>/tools/feishu_auto_collector.py --name "<name>" --output-dir <dir>` |
+| 飞书文档（浏览器） | `Bash` → `python3 <this-skill-dir>/tools/feishu_browser.py --url "<url>" --output <out>` |
+| 飞书文档（MCP） | `Bash` → `python3 <this-skill-dir>/tools/feishu_mcp_client.py --url "<url>" --output <out>` |
+| 钉钉全自动采集 | `Bash` → `python3 <this-skill-dir>/tools/dingtalk_auto_collector.py --name "<name>" --output-dir <dir>` |
+| Slack 全自动采集 | `Bash` → `python3 <this-skill-dir>/tools/slack_auto_collector.py --name "<name>" --output-dir <dir>` |
 | 生成 boss skill | `Bash` → `python3 <this-skill-dir>/tools/create_boss.py --from-example <name> --skills-dir <dir>` |
 | 列出已有老板 | `Bash` → `python3 <this-skill-dir>/tools/create_boss.py --list` |
 | 写入/更新文件 | `Write` / `Edit` 工具 |

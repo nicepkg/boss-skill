@@ -252,17 +252,33 @@ AI     ❯ 🎬 Karma Simulator v1.0
 
 > **More material = more realistic AI boss.** But one sentence is enough to get started.
 
-### Built-in Parsers (just feed the file)
+### Auto-Collect (enter name, one-click pull)
+
+| Source | Method | Built-in Tool | Notes |
+|--------|--------|---------------|-------|
+| **Feishu/Lark** | API auto-pull messages + docs | `feishu_auto_collector.py` | Needs App credentials, Bot in chat |
+| **DingTalk** | API + browser hybrid | `dingtalk_auto_collector.py` | Docs via API, messages via browser |
+| **Slack** | API auto-pull | `slack_auto_collector.py` | Admin Bot install needed, free plan 90-day limit |
+
+### File Parsers (feed exported files)
 
 | Source | Format | Built-in Tool |
 |--------|--------|--------------|
-| **WeChat** | WeChatMsg/PyWxDump/留痕 export | `wechat_parser.py` — auto-detect format |
-| **Feishu/Lark** | JSON export / TXT | `feishu_parser.py` — filter by person |
+| **WeChat** | WeChatMsg/PyWxDump/留痕 export | `wechat_parser.py` — auto-detect |
+| **Feishu/Lark** | JSON / TXT | `feishu_parser.py` — filter by person |
+| **Feishu docs** | URL (browser session) | `feishu_browser.py` — reuse Chrome login |
+| **Feishu docs** | URL (MCP Token) | `feishu_mcp_client.py` — official API |
 | **Email** | `.eml` / `.mbox` | `email_parser.py` — filter by sender |
-| **Photos** | JPEG/PNG with EXIF | `photo_analyzer.py` — extract time & location |
-| **Social Media** | Screenshots / text export | `social_parser.py` — scan & classify |
-| **Screenshots** | Any image | AI reads directly (native support) |
-| **Manual** | Just type | One sentence works |
+| **Photos** | JPEG/PNG with EXIF | `photo_analyzer.py` — time & GPS |
+| **Social Media** | Screenshots / export | `social_parser.py` — scan & classify |
+
+### Zero-tool options
+
+| Source | Description |
+|--------|-------------|
+| **Screenshots** | Drag in WeChat/DingTalk/Feishu chat screenshots, AI reads natively |
+| **Copy-paste** | Paste chat logs directly |
+| **Manual** | One sentence is enough — more catchphrases = more realistic |
 
 ### Recommended Chat Export Tools
 
@@ -285,13 +301,14 @@ create-boss/
 │   ├── prompts/          # 19 prompt templates
 │   └── guides/           # Creation guides + generated skill spec
 ├── examples/             # 3 pre-built bosses (instant demo)
-├── tools/
-│   ├── create_boss.py    # Core generator script
-│   ├── wechat_parser.py  # WeChat chat parser
-│   ├── feishu_parser.py  # Feishu/Lark message parser
-│   ├── email_parser.py   # Email parser
-│   ├── photo_analyzer.py # Photo EXIF analyzer
-│   ├── social_parser.py  # Social media content parser
+├── tools/                     # 13 Python tools (zero deps)
+│   ├── create_boss.py         # Core generator
+│   ├── feishu_auto_collector.py # Feishu auto-collect
+│   ├── dingtalk_auto_collector.py # DingTalk auto-collect
+│   ├── slack_auto_collector.py # Slack auto-collect
+│   ├── wechat_parser.py       # WeChat parser
+│   ├── feishu_parser.py / feishu_browser.py / feishu_mcp_client.py
+│   ├── email_parser.py / photo_analyzer.py / social_parser.py
 │   └── version_manager.py
 └── docs/PRD.md
 ```
