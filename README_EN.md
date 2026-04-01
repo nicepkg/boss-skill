@@ -100,18 +100,17 @@ Every PUA is analyzed and classified by corporate school:
 
 ## Quick Start (30 seconds)
 
-```bash
-# Create 3 pre-built demo bosses instantly
-python3 <this-skill-dir>/tools/create_boss.py --demo --skills-dir <your-skills-dir>
+```
+/create-boss-demo
 ```
 
-Then try:
-```
-/王总 pua "You're talented but your attitude needs work"
-/王总 fight
-/刘姐 cake "Hit our targets and I'll take everyone to Sanya"
-/张总 翻车
-```
+Pick a pre-built boss and start playing:
+
+| Name | Role | Style | Try |
+|------|------|-------|-----|
+| 王总 | Tech VP, internet company | Micromanager · Empty promises | `/王总 pua "talented but attitude"` |
+| 刘姐 | Training center manager | Guilt tripper · Cries when you quit | `/刘姐 cake "hit targets = Sanya trip"` |
+| 张总 | Factory owner, family biz | Dictator · Surveillance freak | `/张总 翻车` |
 
 ---
 
