@@ -250,15 +250,29 @@ AI     ❯ 🎬 Karma Simulator v1.0
 
 ## Data Sources
 
+> **More material = more realistic AI boss.** But one sentence is enough to get started.
+
+### Built-in Parsers (just feed the file)
+
+| Source | Format | Built-in Tool |
+|--------|--------|--------------|
+| **WeChat** | WeChatMsg/PyWxDump/留痕 export | `wechat_parser.py` — auto-detect format |
+| **Feishu/Lark** | JSON export / TXT | `feishu_parser.py` — filter by person |
+| **Email** | `.eml` / `.mbox` | `email_parser.py` — filter by sender |
+| **Photos** | JPEG/PNG with EXIF | `photo_analyzer.py` — extract time & location |
+| **Social Media** | Screenshots / text export | `social_parser.py` — scan & classify |
+| **Screenshots** | Any image | AI reads directly (native support) |
+| **Manual** | Just type | One sentence works |
+
 ### Recommended Chat Export Tools
+
+Independent open-source projects. Our parsers are adapted from [Ex.skill](https://github.com/therealXiaomanChu/ex-skill) and [Colleague.skill](https://github.com/titanwings/colleague-skill) — thanks to the open-source community!
 
 | Tool | Platform | Description |
 |------|----------|-------------|
-| [WeChatMsg](https://github.com/LC044/WeChatMsg) | Windows | WeChat chat export |
-| [PyWxDump](https://github.com/xaoyaoo/PyWxDump) | Windows | WeChat database decryptor |
-| [留痕](https://github.com/greyovo/留痕) | macOS | WeChat export for Mac |
-
-> No export tools needed! Screenshots, descriptions, or copy-paste all work.
+| [WeChatMsg](https://github.com/LC044/WeChatMsg) | Windows | WeChat chat export (txt/html/csv) |
+| [PyWxDump](https://github.com/xaoyaoo/PyWxDump) | Windows | WeChat database decryptor (sqlite) |
+| [留痕](https://github.com/greyovo/留痕) | macOS | WeChat export (json, Mac recommended) |
 
 ---
 
@@ -273,7 +287,11 @@ create-boss/
 ├── examples/             # 3 pre-built bosses (instant demo)
 ├── tools/
 │   ├── create_boss.py    # Core generator script
+│   ├── wechat_parser.py  # WeChat chat parser
+│   ├── feishu_parser.py  # Feishu/Lark message parser
 │   ├── email_parser.py   # Email parser
+│   ├── photo_analyzer.py # Photo EXIF analyzer
+│   ├── social_parser.py  # Social media content parser
 │   └── version_manager.py
 └── docs/PRD.md
 ```

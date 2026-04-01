@@ -63,10 +63,14 @@ python3 <this-skill-dir>/tools/create_boss.py --from-example {对应名字} --sk
 |------|---------|
 | 读取截图 / 图片 | `Read` 工具（原生支持图片） |
 | 读取聊天记录 / 文档 | `Read` 工具 |
-| 解析邮件 .eml/.mbox | `Bash` → `python3 <this-skill-dir>/tools/email_parser.py` |
-| 写入/更新 Skill 文件 | `Write` / `Edit` 工具 |
-| 版本管理 | `Bash` → `python3 <this-skill-dir>/tools/version_manager.py` |
-| 列出已有 Skill | `Bash` → `python3 <this-skill-dir>/tools/create_boss.py --list` |
+| 解析微信聊天记录 | `Bash` → `python3 <this-skill-dir>/tools/wechat_parser.py --file <path> --target "<name>" --output <out>` |
+| 解析飞书消息 JSON | `Bash` → `python3 <this-skill-dir>/tools/feishu_parser.py --file <path> --target "<name>" --output <out>` |
+| 解析邮件 .eml/.mbox | `Bash` → `python3 <this-skill-dir>/tools/email_parser.py --file <path> --target "<name>" --output <out>` |
+| 扫描照片 EXIF | `Bash` → `python3 <this-skill-dir>/tools/photo_analyzer.py --dir <dir> --output <out>` |
+| 扫描社交媒体截图 | `Bash` → `python3 <this-skill-dir>/tools/social_parser.py --dir <dir> --output <out>` |
+| 生成 boss skill | `Bash` → `python3 <this-skill-dir>/tools/create_boss.py --from-example <name> --skills-dir <dir>` |
+| 列出已有老板 | `Bash` → `python3 <this-skill-dir>/tools/create_boss.py --list` |
+| 写入/更新文件 | `Write` / `Edit` 工具 |
 
 **基础目录**：Skill 文件写入 `./{boss-name}/`（相对于本项目目录）。
 

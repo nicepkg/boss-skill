@@ -534,27 +534,31 @@ AI 老板   ❯ （看完公告）
 
 ## 数据来源
 
+> **原材料越多，AI 老板越像。** 但一句话描述也能生成。
+
+### 内置解析器（直接喂文件）
+
+| 来源 | 格式 | 内置工具 |
+|------|------|---------|
+| **微信聊天记录** | WeChatMsg/PyWxDump/留痕导出 | `wechat_parser.py` — 自动检测格式 |
+| **飞书消息** | JSON 导出 / TXT | `feishu_parser.py` — 过滤指定人 |
+| **邮件** | `.eml` / `.mbox` | `email_parser.py` — 按发件人过滤 |
+| **照片** | JPEG/PNG（含 EXIF） | `photo_analyzer.py` — 提取时间地点 |
+| **社交媒体** | 截图 / 文本导出 | `social_parser.py` — 分类扫描 |
+| **截图** | 任意图片 | AI 直接读取（原生支持） |
+| **手动描述** | 直接打字 | 一句话也行 |
+
 ### 推荐的聊天记录导出工具
 
-以下工具为独立的开源项目，本项目不包含它们的代码，仅适配了它们的导出格式：
+以下工具为独立开源项目，本项目内置了对应解析器适配其导出格式：
 
 | 工具 | 平台 | 说明 |
 |------|------|------|
-| [WeChatMsg](https://github.com/LC044/WeChatMsg) | Windows | 微信聊天记录导出，支持多种格式 |
-| [PyWxDump](https://github.com/xaoyaoo/PyWxDump) | Windows | 微信数据库解密导出 |
-| [留痕](https://github.com/greyovo/留痕) | macOS | 微信聊天记录导出（Mac 用户推荐） |
+| [WeChatMsg](https://github.com/LC044/WeChatMsg) | Windows | 微信聊天记录导出（txt/html/csv） |
+| [PyWxDump](https://github.com/xaoyaoo/PyWxDump) | Windows | 微信数据库解密导出（sqlite） |
+| [留痕](https://github.com/greyovo/留痕) | macOS | 微信聊天记录导出（json，Mac 推荐） |
 
-> 不用导出工具也完全可以用！截图、手动描述、复制粘贴都行。导出聊天记录只是让 AI 老板更像。
-
-### 支持的素材类型
-
-| 来源 | 说明 |
-|------|------|
-| 聊天截图 | 微信 / 钉钉 / 飞书群消息截图，直接拖进来 |
-| 聊天记录文本 | 复制粘贴或上传导出文件 |
-| 邮件 | 老板发的邮件 `.eml` / `.mbox`（内置解析器） |
-| 手动描述 | 直接打字描述，一句话也行 |
-| 录音转文字 | 用 [faster-whisper](https://github.com/SYSTRAN/faster-whisper) 转完后粘贴 |
+> 工具信息来自 [@therealXiaomanChu](https://github.com/therealXiaomanChu)，解析器适配自 [前任.skill](https://github.com/therealXiaomanChu/ex-skill) 和 [同事.skill](https://github.com/titanwings/colleague-skill)，感谢开源！
 
 ---
 
@@ -578,9 +582,13 @@ create-boss/
 │       └── generated-skill-spec.md
 ├── examples/             # 预置老板数据（王总/刘姐/张总，一键体验）
 ├── tools/                # Python 工具（零外部依赖）
-│   ├── create_boss.py    #   一键生成 boss skill（核心脚本）
+│   ├── create_boss.py    #   一键生成 boss skill
+│   ├── wechat_parser.py  #   微信聊天记录解析
+│   ├── feishu_parser.py  #   飞书消息解析
 │   ├── email_parser.py   #   邮件解析
-│   └── version_manager.py #  版本存档与回滚
+│   ├── photo_analyzer.py #   照片 EXIF 分析
+│   ├── social_parser.py  #   社交媒体内容解析
+│   └── version_manager.py #  版本存档
 ├── docs/PRD.md
 └── LICENSE
 ```
