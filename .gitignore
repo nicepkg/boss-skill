@@ -1,0 +1,12 @@
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Registry of created bosses (local state)
+bosses-registry.json

@@ -1,0 +1,2 @@
+# Optional dependencies
+# No required dependencies - core functionality uses only Python stdlib
